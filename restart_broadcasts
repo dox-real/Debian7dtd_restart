@@ -1,0 +1,29 @@
+#!/usr/bin/expect -f
+
+set timeout 999999
+set password %DoxBoat%\r
+
+
+spawn telnet localhost 6051
+sleep 2
+
+expect "Please enter password:"
+
+sleep 2
+send "$password"
+
+sleep 3
+send -- "say \"Restart Module Loaded.\" \r"
+sleep 5
+send -- "saveworld \r"
+send -- "say \"\[18D115\]World Saved\[-\].\" \r"
+sleep 2
+send -- "say \"Next reboot in:\[18D115\] 2 hours\[-\].\" \r"
+
+sleep 3600
+
+send -- "say \"Next reboot in:\[18D115\] 1 hour\[-\].\" \r"
+sleep 3300
+send -- "say \"Next reboot in:\[18D115\] 5 minutes\[-\].\" \r"
+sleep 230
+send -- "say \"Next reboot in:\[18D115\] 30 seconds\[-\].\" \r"
