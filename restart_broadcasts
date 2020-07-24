@@ -1,10 +1,10 @@
 #!/usr/bin/expect -f
 
 set timeout 999999
-set password %DoxBoat%\r
+set password <PASS>\r
 
 
-spawn telnet localhost 6051
+spawn telnet <IP> <PORT>
 sleep 2
 
 expect "Please enter password:"
